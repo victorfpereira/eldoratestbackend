@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(16),
       allowNull: false,
       validate: {
-        is: /^[a-zA-Z]+$/, // Somente letras
+        is: /^[a-zA-Z]+$/,
       },
     },
     partNumber: {
@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
         min: 1,
       },
     },
-    categoryId: { // 🔹 Certifique-se de adicionar este campo explicitamente
+    categoryId: { 
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Categories', // Nome da tabela no banco
+        model: 'Categories',
         key: 'id',
       },
       onUpdate: 'CASCADE',
